@@ -1,0 +1,9 @@
+services: 
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    volumes:
+      - /data/system/state/vaultwarden:/data
+    ports:
+      - 80:80

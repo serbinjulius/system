@@ -1,0 +1,107 @@
+services:
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /data/system/state/qbittorrent:/config
+      - /data/workspace/downloads:/downloads
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+   
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /data/system/state/prowlarr:/config
+    ports:
+      - "9696:9696"
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /data/system/state/radarr:/config
+      - /data/library/media:/media
+      - /data/workspace/downloads:/downloads
+    ports:
+      - "7878:7878"
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /data/system/state/sonarr:/config
+      - /data/library/media:/media
+      - /data/workspace/downloads:/downloads
+    ports:
+      - "8989:8989"
+    restart: unless-stopped
+   
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/kolkata
+    volumes:
+      - /data/system/state/jellyfin:/config
+      - /data/library/media:/media
+    ports:
+      - "8096:8096"
+    restart: unless-stopped
+  
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    ports:
+      - 13378:80
+    volumes:
+      - /data/library/media/audiobooks:/audiobooks
+      - /data/system/state/audiobookshelf:/config
+      - /data/system/state/audiobookshelf/metadata:/metadata
+    environment:
+      - TZ=Asia/Kolkata
+    restart: unless-stopped
+
+  calibre-web-automated:
+    image: crocodilestick/calibre-web-automated:latest
+    container_name: calibre-web-automated
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - CWA_PORT_OVERRIDE=8083
+    volumes:
+      - /data/system/state/calibrewebautomated:/config
+      - /data/library/media/ebook/ingest:/cwa-book-ingest
+      - /data/library/media/ebook/library:/calibre-library
+    ports:
+      - 8083:8083
+    restart: unless-stopped
+
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    volumes:
+      - /data/system/state/komga:/config
+      - /data/library/media:/data
+    ports:
+      - 25600:25600
+    restart: unless-stopped
