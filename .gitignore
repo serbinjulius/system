@@ -1,0 +1,32 @@
+# private runtime secrets and environment files
+**/.env
+**/*.env
+!**/.env.example
+
+# stateful container storage and runtime volumes
+state/
+**/data/
+**/db/
+**/logs/
+
+# sensitive key files
+**/*.pem
+**/*.key
+**/*.id_rsa
+**/*.id_ed25519
+configs/ssh/*.id_*
+configs/ssh/authorized_keys
+configs/ssh/known_hosts
+configs/ssh/config.local
+
+# os/editor junk
+.DS_Store
+*.tmp
+
+# jellyfin-tui
+configs/jellyfin-tui/config.yaml
+
+# qutebrowser
+configs/qutebrowser/bookmarks/urls
+configs/qutebrowser/quickmarks
+configs/qutebrowser/qsettings/QtProject.conf
