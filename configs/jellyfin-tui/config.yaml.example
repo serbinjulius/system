@@ -1,0 +1,5 @@
+servers:
+- name: example_name
+  password: example_password
+  url: https://example_address
+  username: example_username
