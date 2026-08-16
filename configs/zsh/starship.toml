@@ -1,0 +1,19 @@
+add_newline = true
+
+format = """
+$directory$git_branch
+$character"""
+
+[directory]
+style = "bold #c8945a"
+truncation_length = 3
+
+[git_branch]
+style = "bold #c8945a"
+
+[git_status]
+style = "bold red"
+
+[character]
+success_symbol = '[->](bold green)'
+error_symbol = '[->](bold red)'
