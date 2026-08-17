@@ -5,6 +5,7 @@
     ./hardware-configuration.nix 
     ../../modules/keyd.nix
     ../../modules/sway.nix
+    ../../modules/fonts.nix
   ];
   
   networking.hostName = "nixos";
