@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix 
     ../../modules/keyd.nix
+    ../../modules/sway.nix
   ];
   
   networking.hostName = "nixos";
