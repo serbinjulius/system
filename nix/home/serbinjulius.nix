@@ -2,13 +2,17 @@
 {
   home.stateVersion = "26.05";
 
-  home.file.".config/sway".source = ../../configs/sway;
-
   home.packages = with pkgs; [
     zsh
     starship
+    kitty
   ];
+
+  home.file.".config/sway".source = ../../configs/sway;
 
   home.file.".zshrc".source = ../../configs/zsh/zshrc;
   home.file.".config/starship.toml".source = ../../configs/zsh/starship.toml;
+
+  home.file.".config/kitty".source = ../../configs/kitty;
+  home.file.".config/colors".source = ../../configs/colors;
 }
