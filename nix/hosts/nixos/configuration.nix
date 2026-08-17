@@ -17,7 +17,11 @@
     isNormalUser = true;
     group = "serbinjulius";
     extraGroups = [ "wheel" ];
+    shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
+
   users.groups.serbinjulius = {};
 
   fileSystems."/data" = {
