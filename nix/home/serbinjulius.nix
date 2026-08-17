@@ -16,6 +16,7 @@
     htop
     aria2
     wl-clipboard
+    bluetui
   ];
 
   home.file.".config/sway".source = ../../configs/sway;

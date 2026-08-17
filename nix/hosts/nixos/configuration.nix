@@ -6,6 +6,7 @@
     ../../modules/keyd.nix
     ../../modules/sway.nix
     ../../modules/fonts.nix
+    ../../modules/bluetooth.nix
   ];
   
   networking.hostName = "nixos";
