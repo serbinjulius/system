@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 {
 
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix 
+    ../../modules/keyd.nix
+  ];
   
   networking.hostName = "nixos";
   system.stateVersion = "26.05";
