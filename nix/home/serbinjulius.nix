@@ -6,6 +6,16 @@
     zsh
     starship
     kitty
+    git
+    curl
+    wget
+    tree
+    unzip
+    zip
+    tmux
+    htop
+    aria2
+    wl-clipboard
   ];
 
   home.file.".config/sway".source = ../../configs/sway;
