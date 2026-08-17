@@ -14,16 +14,21 @@
   boot.loader.systemd-boot.enable =true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   users.users.serbinjulius = {
     isNormalUser = true;
     group = "serbinjulius";
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
+  users.groups.serbinjulius = {};
 
   programs.zsh.enable = true;
 
-  users.groups.serbinjulius = {};
+  environment.systemPackages = with pkgs;  [
+    nh
+  ];
 
   fileSystems."/data" = {
     device = "//192.168.0.3/data";
