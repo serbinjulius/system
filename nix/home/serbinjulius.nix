@@ -17,6 +17,7 @@
     aria2
     wl-clipboard
     bluetui
+    qutebrowser
   ];
 
   home.file.".config/sway".source = ../../configs/sway;
@@ -28,4 +29,6 @@
   home.file.".config/colors".source = ../../configs/colors;
 
   home.file.".ssh/config".source = ../../configs/ssh/config;
+
+  home.file.".config/qutebrowser/config.py".source = ../../configs/qutebrowser/config.py;
 }
