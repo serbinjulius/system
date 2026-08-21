@@ -26,4 +26,7 @@
 
   home.file.".config/kitty".source = ../../configs/kitty;
   home.file.".config/colors".source = ../../configs/colors;
+
+  home.file.".ssh/config".source = ../../configs/ssh/config;
+  home.file.".ssh/authorized_keys".source = ../../configs/ssh/authorized_keys;
 }
