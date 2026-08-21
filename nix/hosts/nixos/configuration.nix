@@ -7,6 +7,7 @@
     ../../modules/sway.nix
     ../../modules/fonts.nix
     ../../modules/bluetooth.nix
+    ../../modules/vpn.nix
   ];
   
   networking.hostName = "nixos";
