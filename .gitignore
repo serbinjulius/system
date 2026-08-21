@@ -15,7 +15,6 @@ state/
 **/*.id_rsa
 **/*.id_ed25519
 configs/ssh/*.id_*
-configs/ssh/authorized_keys
 configs/ssh/known_hosts
 configs/ssh/config.local
 
