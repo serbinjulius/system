@@ -19,6 +19,7 @@
     bluetui
     qutebrowser
     emacs
+    freecad
   ];
 
   home.file.".config/sway".source = ../../configs/sway;
