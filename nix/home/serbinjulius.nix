@@ -18,6 +18,7 @@
     wl-clipboard
     bluetui
     qutebrowser
+    emacs
   ];
 
   home.file.".config/sway".source = ../../configs/sway;
@@ -31,4 +32,6 @@
   home.file.".ssh/config".source = ../../configs/ssh/config;
 
   home.file.".config/qutebrowser/config.py".source = ../../configs/qutebrowser/config.py;
+
+  home.file.".config/emacs/init.el".source = ../../configs/emacs/init.el;
 }
