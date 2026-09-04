@@ -28,3 +28,8 @@ bindkey -M menuselect 'l' vi-forward-char
 if command -v starship &> /dev/null; then
    eval "$(starship init zsh)"
 fi
+
+
+# alias
+alias nix-run-unfree='NIXPKGS_ALLOW_UNFREE=1 nix run --impure'
+alias nix-shell-unfree='NIXPKGS_ALLOW_UNFREE=1 nix shell --impure'
