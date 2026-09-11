@@ -20,6 +20,7 @@
     qutebrowser
     emacs
     freecad
+    zathura
   ];
 
   home.file.".config/sway".source = ../../configs/sway;
