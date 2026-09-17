@@ -21,6 +21,7 @@
     emacs
     freecad
     zathura
+    musescore
   ];
 
   home.file.".config/sway".source = ../../configs/sway;
