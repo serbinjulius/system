@@ -25,6 +25,10 @@
 	     :config
 	     (evil-collection-init))
 
+;; terminal
+(use-package vterm
+  :commands vterm)
+
 ;; theme
 (use-package doom-themes
   :ensure t
@@ -65,9 +69,13 @@
     "f f" 'find-file
     "f s" 'save-buffer
 
-    ;; buffer
+    ;; buffers
     "b" '(:ignore t :which-key "buffers")
     "b b" 'consult-buffer
     "b k" 'kill-buffer
     "b n" 'next-buffer
-    "b p" 'previous-buffer))
+    "b p" 'previous-buffer
+
+    ;; open
+    "o" '(:ignore t :which-key "open")
+    "o t" 'vterm))
