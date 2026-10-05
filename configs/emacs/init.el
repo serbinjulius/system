@@ -46,6 +46,12 @@
   :config
   (which-key-mode))
 
+;; UI Completion
+(use-package vertico
+  :init (vertico-mode))
+(use-package consult)
+
+;; keybinding
 (use-package general
   :config
   (general-create-definer my-leader-def
@@ -54,6 +60,14 @@
     :non-normal-prefix "C-SPC")
 
   (my-leader-def
+    ;; files
     "f" '(:ignore t :which-key "files")
     "f f" 'find-file
-    "f s" 'save-buffer))
+    "f s" 'save-buffer
+
+    ;; buffer
+    "b" '(:ignore t :which-key "buffers")
+    "b b" 'consult-buffer
+    "b k" 'kill-buffer
+    "b n" 'next-buffer
+    "b p" 'previous-buffer))
