@@ -9,15 +9,15 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/nixos/configuration.nix
+        ./hosts/desktop/configuration.nix
 	home-manager.nixosModules.home-manager
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.serbinjulius = import ./home/serbinjulius.nix;
+	  home-manager.users.serbinjulius = import ./home/serbinjulius-desktop.nix;
 	}
       ];
     };

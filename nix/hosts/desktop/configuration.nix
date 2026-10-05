@@ -11,7 +11,7 @@
     ../../modules/ssh.nix
   ];
   
-  networking.hostName = "nixos";
+  networking.hostName = "desktop";
   system.stateVersion = "26.05";
 
   boot.loader.systemd-boot.enable =true;
