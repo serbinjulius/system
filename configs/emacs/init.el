@@ -40,3 +40,20 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (fringe-mode 0)
+
+;; which key
+(use-package which-key
+  :config
+  (which-key-mode))
+
+(use-package general
+  :config
+  (general-create-definer my-leader-def
+    :states '(normal visual insert emacs)
+    :prefix "SPC"
+    :non-normal-prefix "C-SPC")
+
+  (my-leader-def
+    "f" '(:ignore t :which-key "files")
+    "f f" 'find-file
+    "f s" 'save-buffer))
