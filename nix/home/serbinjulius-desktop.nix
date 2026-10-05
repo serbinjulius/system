@@ -18,11 +18,17 @@
     wl-clipboard
     bluetui
     qutebrowser
-    emacs
     freecad
     zathura
     musescore
   ];
+
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [
+      epkgs.vterm
+    ];
+  };
 
   home.file.".config/sway".source = ../../configs/sway;
 
