@@ -78,4 +78,14 @@
 
     ;; open
     "o" '(:ignore t :which-key "open")
-    "o t" 'vterm))
+    "o t" 'vterm
+
+    ;; windows
+    "w" '(:ignore t :which-key "windows")
+    "w v" 'split-window-right
+    "w s" 'split-window-below
+    "w c" 'evil-window-delete
+    "w h" 'evil-window-left
+    "w j" 'evil-window-down
+    "w k" 'evil-window-up
+    "w l" 'evil-window-right))
