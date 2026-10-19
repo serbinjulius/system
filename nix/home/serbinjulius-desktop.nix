@@ -21,6 +21,7 @@
     freecad
     zathura
     musescore
+    vesktop
   ];
 
   programs.emacs = {
