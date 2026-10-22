@@ -17,7 +17,6 @@
     aria2
     wl-clipboard
     bluetui
-    qutebrowser
     freecad
     zathura
     musescore
@@ -38,8 +37,6 @@
   home.file.".config/colors".source = ../../configs/colors;
 
   home.file.".ssh/config".source = ../../configs/ssh/config;
-
-  home.file.".config/qutebrowser/config.py".source = ../../configs/qutebrowser/config.py;
 
   home.file.".config/emacs/init.el".source = ../../configs/emacs/init.el;
 }
