@@ -22,6 +22,7 @@
 	      ./home/serbinjulius-desktop.nix
 	      ./home/sway.nix
 	      ./home/qutebrowser.nix
+	      ./home/emacs.nix
 	    ];
 	  };
 	}

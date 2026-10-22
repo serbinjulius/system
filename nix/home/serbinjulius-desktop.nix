@@ -23,13 +23,6 @@
     vesktop
   ];
 
-  programs.emacs = {
-    enable = true;
-    extraPackages = epkgs: [
-      epkgs.vterm
-    ];
-  };
-
   home.file.".zshrc".source = ../../configs/zsh/zshrc;
   home.file.".config/starship.toml".source = ../../configs/zsh/starship.toml;
 
@@ -37,6 +30,4 @@
   home.file.".config/colors".source = ../../configs/colors;
 
   home.file.".ssh/config".source = ../../configs/ssh/config;
-
-  home.file.".config/emacs/init.el".source = ../../configs/emacs/init.el;
 }
