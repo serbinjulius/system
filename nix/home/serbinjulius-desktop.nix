@@ -31,8 +31,6 @@
     ];
   };
 
-  home.file.".config/sway".source = ../../configs/sway;
-
   home.file.".zshrc".source = ../../configs/zsh/zshrc;
   home.file.".config/starship.toml".source = ../../configs/zsh/starship.toml;
 

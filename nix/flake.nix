@@ -17,7 +17,12 @@
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.serbinjulius = import ./home/serbinjulius-desktop.nix;
+	  home-manager.users.serbinjulius = {
+	    imports = [
+	      ./home/serbinjulius-desktop.nix
+	      ./home/sway.nix
+	    ];
+	  };
 	}
       ];
     };
