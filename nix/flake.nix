@@ -23,6 +23,8 @@
 	      ./home/sway.nix
 	      ./home/qutebrowser.nix
 	      ./home/emacs.nix
+	      ./home/zsh.nix
+	      ./home/starship.nix
 	    ];
 	  };
 	}
