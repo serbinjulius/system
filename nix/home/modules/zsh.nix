@@ -5,6 +5,6 @@
     enableCompletion = true;
     autosuggestion.enable = false;
 
-    initContent = builtins.readFile ../../configs/zsh/zshrc;
+    initContent = builtins.readFile ../../../configs/zsh/zshrc;
   };
 }

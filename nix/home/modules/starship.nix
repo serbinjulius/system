@@ -3,6 +3,6 @@
   programs.starship = {
     enable = true;
 
-    settings = pkgs.lib.importTOML ../../configs/zsh/starship.toml;
+    settings = pkgs.lib.importTOML ../../../configs/zsh/starship.toml;
   };
 }

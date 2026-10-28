@@ -20,11 +20,11 @@
 	  home-manager.users.serbinjulius = {
 	    imports = [
 	      ./home/serbinjulius-desktop.nix
-	      ./home/sway.nix
-	      ./home/qutebrowser.nix
-	      ./home/emacs.nix
-	      ./home/zsh.nix
-	      ./home/starship.nix
+	      ./home/modules/sway.nix
+	      ./home/modules/qutebrowser.nix
+	      ./home/modules/emacs.nix
+	      ./home/modules/zsh.nix
+	      ./home/modules/starship.nix
 	    ];
 	  };
 	}
