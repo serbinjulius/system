@@ -9,6 +9,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
+
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -30,5 +31,13 @@
 	}
       ];
     };
+
+    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/server/configuration.nix
+      ];
+    };
+
   };
 }
