@@ -25,4 +25,10 @@
   environment.systemPackages = with pkgs; [
     git
   ];
+
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/6bce5b2b-f507-4b0a-9848-2a5feee4f3e5";
+    fsType = "ext4";
+    options = [ "nofail" ];
+  };
 }
