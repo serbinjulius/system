@@ -36,7 +36,7 @@
   ];
 
   fileSystems."/data" = {
-    device = "//192.168.0.3/data";
+    device = "//192.168.0.2/data";
     fsType = "cifs";
     options = let
       automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
