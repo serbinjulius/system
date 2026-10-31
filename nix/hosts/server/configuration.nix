@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/ssh.nix
+    ../../modules/docker.nix
   ];
 
   networking.hostName = "server";
