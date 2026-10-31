@@ -11,6 +11,7 @@
       TYPE = "FABRIC";
       VERSION = "1.21.11";
       MEMORY = "4G";
+      ONLINE_MODE = "FALSE";
       MODRINTH_PROJECTS = "fabric-api, lithium, spark";
       UID = "1000";
       GID = "1000";
