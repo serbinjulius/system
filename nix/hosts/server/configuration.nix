@@ -4,6 +4,7 @@
     ./hardware-configuration.nix
     ../../modules/ssh.nix
     ../../modules/docker.nix
+    ../../modules/game-servers/minecraft.nix
   ];
 
   networking.hostName = "server";
