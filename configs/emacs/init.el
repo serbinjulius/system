@@ -59,6 +59,18 @@
   :init (vertico-mode))
 (use-package consult)
 
+;; UI Hide
+(use-package consult
+  :config
+  (setq consult-buffer-filter
+	(append consult-buffer-filter
+		'("\\`\\*scratch\\*\\'"
+		  "\\`\\*Messages\\*\\'"
+		  "\\`\\*Async-native-compile-log\\*\\'"))))
+
+(setq switch-to-prev-buffer-skip-regexp
+      "\\`\\*\\(scratch\\|Messages\\|Async-native-compile-log\\)\\*\\'")
+
 ;; functions
 (defun my/vterm-new ()
   (interactive)
