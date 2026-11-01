@@ -25,6 +25,14 @@
 	     :config
 	     (evil-collection-init))
 
+;; dired
+(use-package dired
+  :ensure nil
+  :commands (dired dired-jump)
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+    " " nil))
+
 ;; terminal
 (use-package vterm
   :commands vterm)
@@ -101,7 +109,8 @@
 (use-package general
   :config
   (general-create-definer my-leader-def
-    :states '(normal visual insert emacs)
+    :keymaps 'override
+    :states '(normal visual motion insert emacs)
     :prefix "SPC"
     :non-normal-prefix "C-SPC")
 
