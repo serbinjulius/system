@@ -28,6 +28,7 @@
 ;; terminal
 (use-package vterm
   :commands vterm)
+(setq vterm-buffer-name-string "vterm: %s")
 
 ;; startup buffer
 (setq initial-scratch-message nil)
