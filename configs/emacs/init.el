@@ -89,8 +89,11 @@
     "b" '(:ignore t :which-key "buffers")
     "b b" 'consult-buffer
     "b k" 'kill-buffer
+    "b c" 'kill-current-buffer
+    "b d" 'kill-buffer-and-window
     "b n" 'next-buffer
     "b p" 'previous-buffer
+    "b r" 'rename-buffer
 
     ;; open
     "o" '(:ignore t :which-key "open")
