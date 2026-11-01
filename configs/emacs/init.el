@@ -88,6 +88,15 @@
   (select-window (split-window-below))
   (my/vterm-new))
 
+(defun my/kill-buffer ()
+  (interactive)
+  (let* ((hidden '("*scratch*" "*Messages*" "*Async-native-compile-log*"))
+	 (names (seq-remove
+		 (lambda (n) (or (member n hidden)
+				 (string-prefix-p " " n)))
+		 (mapcar #'buffer-name (buffer-list)))))
+    (kill-buffer (completing-read "Kill buffer: " names nil t))))
+
 ;; keybinding
 (use-package general
   :config
@@ -105,7 +114,7 @@
     ;; buffers
     "b" '(:ignore t :which-key "buffers")
     "b b" 'consult-buffer
-    "b k" 'kill-buffer
+    "b k" 'my/kill-buffer
     "b c" 'kill-current-buffer
     "b d" 'kill-buffer-and-window
     "b n" 'next-buffer
