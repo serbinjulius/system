@@ -55,6 +55,22 @@
   :init (vertico-mode))
 (use-package consult)
 
+;; functions
+(defun my/vterm-new ()
+  (interactive)
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'vterm)))
+
+(defun my/vterm-split-right ()
+  (interactive)
+  (select-window (split-window-right))
+  (my/vterm-new))
+
+(defun my/vterm-split-below ()
+  (interactive)
+  (select-window (split-window-below))
+  (my/vterm-new))
+
 ;; keybinding
 (use-package general
   :config
