@@ -33,6 +33,13 @@
   (evil-collection-define-key 'normal 'dired-mode-map
     " " nil))
 
+;; tramp
+(with-eval-after-load 'tramp
+  (tramp-set-completion-function
+   "ssh"
+   '((tramp-parse-sconfig "~/.ssh/config")
+     (tramp-parse-sconfig "~/.ssh/config.local")))
+
 ;; terminal
 (use-package vterm
   :commands vterm)
