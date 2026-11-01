@@ -105,6 +105,20 @@
 		 (mapcar #'buffer-name (buffer-list)))))
     (kill-buffer (completing-read "Kill buffer: " names nil t))))
 
+(defun my/vterm-cwd ()
+  (let ((proc (get-buffer-process (current-buffer))))
+    (when proc
+      (file-name-as-directory
+       (file-truename (format "/proc/%d/cwd" (process-id proc)))))))
+
+(defun my/find-file-here ()
+  (interactive)
+  (let ((default-directory
+	 (or (and (derived-mode-p 'vterm-mode) (my/vterm-cwd))
+	     default-directory)))
+	(call-interactively 'find-file)))
+
+
 ;; keybinding
 (use-package general
   :config
@@ -117,7 +131,7 @@
   (my-leader-def
     ;; files
     "f" '(:ignore t :which-key "files")
-    "f f" 'find-file
+    "f f" 'my/find-file-here
     "f s" 'save-buffer
 
     ;; buffers
