@@ -33,3 +33,7 @@ fi
 # alias
 alias nix-run-unfree='NIXPKGS_ALLOW_UNFREE=1 nix run --impure'
 alias nix-shell-unfree='NIXPKGS_ALLOW_UNFREE=1 nix shell --impure'
+
+# shell titles
+autoload -U add-zsh-hook
+add-zsh-hook -Uz precmd (){ printf '\e]2;%s\e\\' "${PWD:t}" }
