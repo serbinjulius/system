@@ -29,6 +29,10 @@
 (use-package vterm
   :commands vterm)
 
+;; startup buffer
+(setq initial-scratch-message nil)
+(setq initial-buffer-choice #'my/vterm-new)
+
 ;; theme
 (use-package doom-themes
   :ensure t
