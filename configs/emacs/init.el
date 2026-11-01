@@ -98,6 +98,9 @@
     ;; open
     "o" '(:ignore t :which-key "open")
     "o t" 'vterm
+    "o n" 'my/vterm-new
+    "o v" 'my/vterm-split-right
+    "o h" 'my/vterm-split-below
 
     ;; windows
     "w" '(:ignore t :which-key "windows")
