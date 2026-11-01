@@ -82,21 +82,25 @@
 
 ;; functions
 (defun my/vterm-new ()
+  "open a new instance of vterm"
   (interactive)
   (let ((current-prefix-arg '(4)))
     (call-interactively 'vterm)))
 
 (defun my/vterm-split-right ()
+  "open a new instance of vterm and split it to the right"
   (interactive)
   (select-window (split-window-right))
   (my/vterm-new))
 
 (defun my/vterm-split-below ()
+  "open a new instance of vterm and split it below"
   (interactive)
   (select-window (split-window-below))
   (my/vterm-new))
 
 (defun my/kill-buffer ()
+  "kill-buffer with filtered buffers"
   (interactive)
   (let* ((hidden '("*scratch*" "*Messages*" "*Async-native-compile-log*"))
 	 (names (seq-remove
@@ -106,12 +110,14 @@
     (kill-buffer (completing-read "Kill buffer: " names nil t))))
 
 (defun my/vterm-cwd ()
+  "get the directory of current vterm buffer"
   (let ((proc (get-buffer-process (current-buffer))))
     (when proc
       (file-name-as-directory
        (file-truename (format "/proc/%d/cwd" (process-id proc)))))))
 
 (defun my/find-file-here ()
+  "find-file with current directory"
   (interactive)
   (let ((default-directory
 	 (or (and (derived-mode-p 'vterm-mode) (my/vterm-cwd))
