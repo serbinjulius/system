@@ -38,7 +38,7 @@
   (tramp-set-completion-function
    "ssh"
    '((tramp-parse-sconfig "~/.ssh/config")
-     (tramp-parse-sconfig "~/.ssh/config.local")))
+     (tramp-parse-sconfig "~/.ssh/config.local"))))
 
 ;; terminal
 (use-package vterm
