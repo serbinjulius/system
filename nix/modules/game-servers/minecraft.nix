@@ -1,7 +1,5 @@
 { ... }:
 {
-  virtualisation.oci-containers.backend = "docker";
-
   virtualisation.oci-containers.containers.minecraft = {
     image = "itzg/minecraft-server:latest";
     ports = [ "25565:25565" "19132:19132" "8100:8100" "19132:19132/udp" ];
