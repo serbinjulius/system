@@ -5,6 +5,7 @@
     ../../modules/ssh.nix
     ../../modules/docker.nix
     ../../modules/vpn.nix
+    ../../modules/nvidia.nix
     ../../modules/game-servers/minecraft.nix
   ];
 
