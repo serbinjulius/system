@@ -6,7 +6,7 @@
     ../../modules/docker.nix
     ../../modules/vpn.nix
     ../../modules/nvidia.nix
-    ../../modules/game-servers/minecraft.nix
+    ../../modules/server/minecraft.nix
   ];
 
   networking.hostName = "server";
