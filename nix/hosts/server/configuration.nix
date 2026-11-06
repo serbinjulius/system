@@ -5,7 +5,6 @@
     ../../modules/ssh.nix
     ../../modules/docker.nix
     ../../modules/vpn.nix
-    ../../modules/nvidia.nix
     ../../modules/server/minecraft.nix
   ];
 
@@ -52,5 +51,23 @@
 	"force user" = "serbinjulius";
       };
     };
+  };
+
+  # nvidia drivers
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+
+    nvidiaSettings = true;
+
+    open = false;
   };
 }
