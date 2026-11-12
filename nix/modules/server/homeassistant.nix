@@ -9,6 +9,7 @@
         name = "Home";
       };
     };
+    extraComponents = [ "met" "tuya" "smartthings" ];
   };
 
   systemd.tmpfiles.rules = [
