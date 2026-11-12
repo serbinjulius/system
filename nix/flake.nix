@@ -6,15 +6,21 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, sops-nix, ... }: {
 
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/desktop/configuration.nix
 	home-manager.nixosModules.home-manager
+	sops-nix.nixosModules.sops
 	{
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
@@ -36,6 +42,7 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/server/configuration.nix
+	sops-nix.nixosModules.sops
       ];
     };
 
