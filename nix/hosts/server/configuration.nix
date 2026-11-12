@@ -6,6 +6,7 @@
     ../../modules/docker.nix
     ../../modules/vpn.nix
     ../../modules/server/minecraft.nix
+    ../../modules/server/homeassistant.nix
   ];
 
   networking.hostName = "server";
