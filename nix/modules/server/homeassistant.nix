@@ -7,6 +7,10 @@
       default_config = { };
       homeassistant = {
         name = "Home";
+	latitude = "!secret ha_latitude";
+	longitude = "!secret ha_longitude";
+	time_zone = "Asia/Kolkata";
+	unit_system = "metric";
       };
     };
     extraComponents = [ "met" "tuya" "smartthings" ];
